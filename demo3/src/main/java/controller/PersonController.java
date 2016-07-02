@@ -19,6 +19,7 @@ public class PersonController {
 
 	@RequestMapping("/person")
 	public String person(Model model){ //the data is in model
+		
 		Person p = new Person();
 		p.setFirstname("Bud");
 		p.setLastname("Spencer");
