@@ -5,7 +5,7 @@ public class Table {
 	public Table(){}
 	public Table(String name, int number){
 		this.name = name;
-		this.number = number;
+		this.number = number;	
 	}
 	
 	public String name;
@@ -23,6 +23,8 @@ public class Table {
 	public void setNumber(int number) {
 		this.number = number;
 	}
+
+	
 
 
 }
