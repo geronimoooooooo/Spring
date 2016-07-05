@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 @Service
 public class Dog {
 	
@@ -15,9 +18,10 @@ public class Dog {
 	}
 	
 	public String name;
-	public int age;
-	
-	private List<Dog> list_dogs = new ArrayList<Dog>();
+	private int age;	
+	private String color;
+		
+	private List<Dog> list_dogs;
 
 	public String getName() {
 		return name;
@@ -30,6 +34,18 @@ public class Dog {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public List<Dog> getList_dogs() {
+		return list_dogs;
+	}
+	public void setList_dogs(List<Dog> list_dogs) {
+		this.list_dogs = list_dogs;
 	}
 	
 	

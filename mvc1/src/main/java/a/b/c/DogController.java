@@ -10,17 +10,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import model.Dog;
+import model.GsonTester;
 
 @RestController
 public class DogController {
 	
 	@Autowired
 	Dog dog;
+	GsonTester gt = new GsonTester();
 	
 	@RequestMapping(value="dog")
 	public Dog getDog(){
 		dog.setAge(1);
 		dog.setName("dog1");
+		
+		
+		gt.createGson(dog);
 		return dog;
 		//returns {"name":"lenny1","age":1}
 	}
@@ -32,6 +37,7 @@ public class DogController {
 		list_dogs.add(new Dog("dog1",1));
 		list_dogs.add(new Dog("dog2",2));
 		map.put("myArray", list_dogs);
+		gt.createArrayGson(map);
 		//return list_dogs; [{"name":"dog1","age":1},{"name":"dog2","age":2}]
 		return map;		//{"myArray":[{"name":"dog1","age":1},{"name":"dog2","age":2}]}
 	}
